@@ -35,9 +35,11 @@ W5 = tf.Variable(tf.truncated_normal([O, 10], stddev=0.1))
 B5 = tf.Variable(tf.zeros([10]))
 
 # 输入拉伸为一维张量
+dropout_radio = tf.placeholder(tf.float32)
 XX = tf.reshape(X, [-1, 784])
 Y1 = tf.nn.sigmoid(tf.matmul(XX, W1) + B1)
 # Y1 = tf.nn.relu(tf.matmul(Y1, W2) + B2)
+# Y1d = tf.nn.dropout(Y1, dropout_radio)
 Y2 = tf.nn.sigmoid(tf.matmul(Y1, W2) + B2)
 # Y2 = tf.nn.relu(tf.matmul(Y1, W2) + B2)
 Y3 = tf.nn.sigmoid(tf.matmul(Y2, W3) + B3)
