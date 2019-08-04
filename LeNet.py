@@ -22,8 +22,6 @@ X = tf.placeholder("float", [None, img_size, img_size, 1])
 Y = tf.placeholder("float", [None, num_class])
 
 
-
-
 # 定义网络权重
 def init_weight(shape):
     return tf.Variable(tf.random_normal(shape, stddev=0.01))
